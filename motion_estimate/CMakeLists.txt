@@ -46,7 +46,7 @@ add_library(${LIBRARY_NAME} src/leg_estimate/leg_estimate.cpp
 add_dependencies(${LIBRARY_NAME} ${catkin_EXPORTED_TARGETS} filter_tools pronto_math)
 target_link_libraries(${LIBRARY_NAME} filter_tools kalman_filter_tools pronto_vis)
 pods_use_pkg_config_packages(${LIBRARY_NAME} forward-kinematics kdl-parser bot2-param-client path-util 
-  model-client bot2-frames)
+  model-client bot2-frames urdf_dom urdf)
 
 #add_subdirectory(src/leg_estimate)
 add_subdirectory(src/leg_estimate_apps)
