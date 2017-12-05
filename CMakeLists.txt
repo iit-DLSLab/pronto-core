@@ -31,8 +31,14 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-######################################################
 set(LIBRARY_NAME mav-state-est)
+
+catkin_package(
+  INCLUDE_DIRS include ${bot2-core_INCLUDE_DIRS}
+  LIBRARIES ${LIBRARY_NAME}
+)
+
+######################################################
 
 add_library(${LIBRARY_NAME} src/lcm_front_end.cpp
   src/mav_state_est.cpp
@@ -41,11 +47,6 @@ add_library(${LIBRARY_NAME} src/lcm_front_end.cpp
   src/rbis_update_interface.cpp
   src/sensor_handlers.cpp
   src/update_history.cpp)
-
-catkin_package(
-  INCLUDE_DIRS include ${bot2-core_INCLUDE_DIRS}
-  LIBRARIES ${LIBRARY_NAME}
-)
 
 #############
 ## Install ##
